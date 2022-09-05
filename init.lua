@@ -8,7 +8,7 @@ require "user.telescope"
 require "user.treesitter"
 require "user.autopairs"
 require "user.comment"
---require "user.gitsigns" Invalid signs, W18
+require "user.gitsigns"
 require "user.nvim-tree"
 require "user.bufferline"
 require "user.lualine"

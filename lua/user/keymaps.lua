@@ -1,3 +1,11 @@
+-- Reload config on save/write
+vim.cmd [[
+  augroup keymap_user_config
+    autocmd!
+    autocmd BufWritePost keymaps.lua source %
+  augroup end
+]]
+
 -- Shorten function name
 local keymap = vim.keymap.set
 
@@ -32,14 +40,15 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n","J","5j",opts)
+-- keymap("n","<S-k>","5k",opts)
 
--- Clear highlights
---keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
+-- Clear highlight
 keymap("n", "<ESC>", "<cmd>nohlsearch<CR>", opts)
 
 -- Close buffers
---keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
-keymap("n", "<S-q>", ":q<CR>", opts)
+keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
+-- keymap("n", "<S-q>", ":q<CR>", opts)
 
 -- Save buffer
 keymap("n", "<C-s>", ":w<CR>", {noremap=true} )
@@ -56,7 +65,11 @@ keymap("i", "kj", "<ESC>", opts)
 -- Save buffer and stay in insert mode
 keymap("i", "<C-s>", "<ESC>:w<CR>li", {noremap=true} )
 
--- Visual --
+-- Better word delete (deletes one word)
+keymap("i","<C-h>","<C-w>")
+keymap("i","<C-Del>","<cmd>norm! dw<CR>")
+
+-- Visul --
 -- Stay in indent mode
 --keymap("v", "<", "<gv", opts)
 --keymap("v", ">", ">gv", opts)
@@ -73,12 +86,11 @@ keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 
+-- Comment
+-- see user.comment
+
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
-
--- Comment
-keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
-keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>')
 
 -- DAP
 keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
