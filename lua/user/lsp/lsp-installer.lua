@@ -3,15 +3,16 @@ if not status_ok then
   return
 end
 
+-- Add installed servers here
 local servers = {
   "sumneko_lua",
-  "cssls",
-  "html",
-  "tsserver",
+  -- "cssls",
+  -- "html",
+  -- "tsserver",
   "pyright",
-  "bashls",
-  "jsonls",
-  "yamlls",
+  -- "bashls",
+  -- "jsonls",
+  -- "yamlls", 
 }
 
 lsp_installer.setup()
