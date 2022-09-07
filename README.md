@@ -78,5 +78,5 @@ X - uninstall
 After installation you need to add the server to `~/.config/nvim/lua/user/lsp/lsp-installer.lua` in the list/table `servers`.
 
 ### Formatters and linters
-Install formatters and linters and add them to `~/.config/nvim/lua/user/lsp/null-ls.lua`
+Install formatters and linters binaries and add them to `~/.config/nvim/lua/user/lsp/null-ls.lua` accrdingly.
 Information about different formatters and linters are found [here](https://github.com/jose-elias-alvarez/null-ls.nvim)
