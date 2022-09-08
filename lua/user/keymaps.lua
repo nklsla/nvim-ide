@@ -40,8 +40,8 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
-keymap("n","J","5j",opts)
-keymap("n","K","5k",opts)
+keymap("n","J","3j",opts)
+keymap("n","K","3k",opts)
 
 -- Clear highlight
 keymap("n", "<ESC>", "<cmd>nohlsearch<CR>", opts)
@@ -65,7 +65,7 @@ keymap("i", "kj", "<ESC>", opts)
 -- Save buffer and stay in insert mode
 keymap("i", "<C-s>", "<ESC>:w<CR>li", {noremap=true} )
 
--- Better word delete (deletes one word)
+-- Better word delete (CTRL + BackSpace = deletes one word)
 keymap("i","<C-h>","<C-w>")
 keymap("i","<C-Del>","<cmd>norm! dw<CR>")
 
@@ -89,13 +89,16 @@ keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 -- Comment
 -- see user.comment
 
+-- LSP
+-- see user.lsp.handlers
+
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 
 -- DAP
-keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
+keymap("n", "<lebder>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
 keymap("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", opts)
-keymap("n", "<leader>di", "<cmd>lua require'dap'.step_into()<cr>", opts)
+keymap("n", "<lebder>di", "<cmd>lua require'dap'.step_into()<cr>", opts)
 keymap("n", "<leader>do", "<cmd>lua require'dap'.step_over()<cr>", opts)
 keymap("n", "<leader>dO", "<cmd>lua require'dap'.step_out()<cr>", opts)
 keymap("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>", opts)
