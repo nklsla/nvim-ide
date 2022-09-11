@@ -1,3 +1,6 @@
+# Project specific
+gittoken.txt
+
 # Compiled Lua sources
 luac.out
 
