@@ -1,3 +1,6 @@
+-- This file has to be loaded before keymaps.lua to work
+-- as intended using <leader>r and <C-\> simultaniously
+
 local status_ok, toggleterm = pcall(require, "toggleterm")
 if not status_ok then
 	print(toggleterm)
