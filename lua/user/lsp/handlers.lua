@@ -24,7 +24,7 @@ M.setup = function()
 	end
 
 	local config = {
-		virtual_text = false, -- disable virtual text
+		virtual_text = false,
 		signs = {
 			active = signs, -- show signs
 		},
@@ -33,7 +33,7 @@ M.setup = function()
 		severity_sort = true,
 		float = {
 			focusable = true,
-			style = "minimal",
+			-- style = "minimal",
 			border = "rounded",
 			source = "always",
 			header = "",

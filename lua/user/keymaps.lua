@@ -91,6 +91,10 @@ keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 -- LSP
 -- see user.lsp.handlers
 
+-- ToggleTerm
+keymap("n", "<leader>r", ':TermExec cmd="python %" direction=horizontal size=15<CR>') --Run current file with python
+keymap("n", "<C-\\>", ":ToggleTerm direction=float size=40 border=curved<CR>") -- Toggle floating terminal
+
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 
