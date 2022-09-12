@@ -16,6 +16,7 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup({
 	debug = false,
 	sources = {
+		-- Formatters
 		formatting.black.with({ extra_args = { "--fast" } }),
 		formatting.stylua,
 		formatting.astyle,
@@ -23,7 +24,8 @@ null_ls.setup({
 		-- Diagnostics
 		diagnostics.flake8,
 		diagnostics.cpplint,
-	}, -- Function to "Format on save"
+	},
+	-- Function to "Format on save"
 	-- you can reuse a shared lspconfig on_attach callback here
 	on_attach = function(client, bufnr)
 		if client.supports_method("textDocument/formatting") then
