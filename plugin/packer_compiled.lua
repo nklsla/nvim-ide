@@ -114,6 +114,11 @@ _G.packer_plugins = {
     path = "/home/niklas/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["code_runner.nvim"] = {
+    loaded = true,
+    path = "/home/niklas/.local/share/nvim/site/pack/packer/start/code_runner.nvim",
+    url = "https://github.com/CRAG666/code_runner.nvim"
+  },
   ["darkplus.nvim"] = {
     loaded = true,
     path = "/home/niklas/.local/share/nvim/site/pack/packer/start/darkplus.nvim",
@@ -183,6 +188,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/niklas/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-surround"] = {
+    loaded = true,
+    path = "/home/niklas/.local/share/nvim/site/pack/packer/start/nvim-surround",
+    url = "https://github.com/kylechui/nvim-surround"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
