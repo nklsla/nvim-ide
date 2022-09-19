@@ -31,7 +31,7 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
--- Resize with arrows
+-- Resize windows with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
 keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
@@ -94,7 +94,7 @@ keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 -- ToggleTerm
 keymap("n", "<leader>r", ':TermExec cmd="python3 %:p" direction=horizontal size=15<CR>', opts) --Run current file with python
 keymap("n", "<leader>R", ':TermExec cmd="python3 %:p" direction=horizontal size=15 go_back=0<CR>', opts) --Run current file with python and set focus on terminal
-keymap("n", "<C-\\>", ":ToggleTerm direction=float size=40 border=curved<CR>", opts) -- Toggle floating terminal
+keymap("n", "`", ":ToggleTerm direction=float size=40 border=curved<CR>", opts) -- Toggle floating terminal
 
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
