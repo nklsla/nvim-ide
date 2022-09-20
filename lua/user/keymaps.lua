@@ -92,9 +92,7 @@ keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 -- see user.lsp.handlers
 
 -- ToggleTerm
--- keymap("n", "<leader>r", ':TermExec cmd="python3 %:p" direction=horizontal size=15<CR>', opts) --Run current file with python
--- -- keymap("n", "<leader>R", ':TermExec cmd="python3 %:p" direction=horizontal size=15 go_back=0<CR>', opts) --Run current file with python and set focus on terminal
--- keymap("n", "`", ":ToggleTerm direction=float size=40 border=curved<CR>", opts) -- Toggle floating terminal
+keymap("n", "<leader>R", ":RunFile toggleterm<CR>", { noremap = true, silent = false })
 keymap("n", "<leader>r", ":RunCode<CR>", { noremap = true, silent = false })
 keymap("n", "<leader>rf", ":RunFile<CR>", { noremap = true, silent = false })
 keymap("n", "<leader>rft", ":RunFile tab<CR>", { noremap = true, silent = false })
@@ -102,6 +100,7 @@ keymap("n", "<leader>rp", ":RunProject<CR>", { noremap = true, silent = false })
 keymap("n", "<leader>rc", ":RunClose<CR>", { noremap = true, silent = false })
 keymap("n", "<leader>crf", ":CRFiletype<CR>", { noremap = true, silent = false })
 keymap("n", "<leader>crp", ":CRProjects<CR>", { noremap = true, silent = false })
+
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 
