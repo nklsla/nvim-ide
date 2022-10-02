@@ -1,12 +1,12 @@
 local cmp_status_ok, cmp = pcall(require, "cmp")
 if not cmp_status_ok then
-    print(cmp)
+	print(cmp)
 	return
 end
 
 local snip_status_ok, luasnip = pcall(require, "luasnip")
 if not snip_status_ok then
-    print(luasnip)
+	print(luasnip)
 	return
 end
 
@@ -20,7 +20,7 @@ end
 local kind_icons = {
 	Text = "",
 	Method = "",
-	Function = "",
+	Function = "",
 	Constructor = "",
 	Field = "",
 	Variable = "",
@@ -32,9 +32,9 @@ local kind_icons = {
 	Value = "",
 	Enum = "",
 	Keyword = "",
-	Snippet = "",
+	Snippet = "",
 	Color = "",
-	File = "",
+	File = "",
 	Reference = "",
 	Folder = "",
 	EnumMember = "",
@@ -99,11 +99,11 @@ cmp.setup({
 		format = function(entry, vim_item)
 			vim_item.kind = kind_icons[vim_item.kind]
 			vim_item.menu = ({
-				nvim_lsp = "",
-				nvim_lua = "",
-				luasnip = "",
-				buffer = "",
-				path = "",
+				nvim_lsp = "[LSP]",
+				nvim_lua = "[LUA]",
+				luasnip = "[Snippet]",
+				buffer = "[Buffer]",
+				path = "[Path]",
 				emoji = "",
 			})[entry.source.name]
 			return vim_item
