@@ -69,10 +69,13 @@ keymap("i", "<C-s>", "<ESC>:w<CR>li", { noremap = true })
 keymap("i", "<C-h>", "<C-w>")
 keymap("i", "<C-Del>", "<cmd>norm! dw<CR>")
 
+-- Map shift-tab to behave normally
+keymap("i", "<S-TAB>", "<C-d>")
+
 -- Visul --
 -- Stay in indent mode
---keymap("v", "<", "<gv", opts)
---keymap("v", ">", ">gv", opts)
+keymap("v", "<", "<gv", opts)
+keymap("v", ">", ">gv", opts)
 
 -- Plugins --
 

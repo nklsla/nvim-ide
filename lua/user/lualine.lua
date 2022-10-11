@@ -109,6 +109,7 @@ lualine.setup({
 			diff,
 			spaces,
 			filetype,
+			"encoding",
 		},
 		lualine_y = { location },
 		lualine_z = { "progress" },

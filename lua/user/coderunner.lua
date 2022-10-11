@@ -22,6 +22,7 @@ coderun.setup({
 		python = "python3 -u",
 		typescript = "deno run",
 		rust = "cd $dir && rustc $fileName && $dir/$fileNameWithoutExt",
+		cpp = "cd $dir && g++ -o $fileNameWithoutExt $fileName && $dir/$fileNameWithoutExt",
 	},
 	float = {
 		-- Window border (see ':h nvim_open_win')
