@@ -106,6 +106,7 @@ keymap("n", "<leader>crp", ":CRProjects<CR>", { noremap = true, silent = false }
 
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
+keymap("n", "<leader>gp", ":Gitsigns preview_hunk <CR>", opts)
 
 -- DAP
 keymap("n", "<leader>b", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
