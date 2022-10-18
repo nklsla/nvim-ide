@@ -14,6 +14,7 @@ local servers = {
 	-- "jsonls",
 	-- "yamlls",
 	"clangd",
+	"rust_analyzer",
 }
 
 lsp_installer.setup()
@@ -23,6 +24,7 @@ if not lspconfig_status_ok then
 	return
 end
 
+-- Add options from respecitve files
 local opts = {}
 
 for _, server in pairs(servers) do
@@ -45,6 +47,11 @@ for _, server in pairs(servers) do
 		local clangd = require("user.lsp.settings.clangd")
 		opts = vim.tbl_deep_extend("force", clangd, opts)
 	end
+
+	-- if server == "rust_analyzer" then
+	-- 	local rust_analyzer = require("user.lsp.settings.rust_analyzer")
+	-- 	opts = vim.tbl_deep_extend("force", rust_analyzer, opts)
+	-- end
 
 	lspconfig[server].setup(opts)
 end

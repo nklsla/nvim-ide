@@ -94,7 +94,7 @@ keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 -- LSP
 -- see user.lsp.handlers
 
--- ToggleTerm
+-- CodeRunner & Toggleterm
 keymap("n", "<leader>R", ":RunFile toggleterm<CR>", { noremap = true, silent = false })
 keymap("n", "<leader>r", ":RunCode<CR>", { noremap = true, silent = false })
 keymap("n", "<leader>rf", ":RunFile<CR>", { noremap = true, silent = false })
