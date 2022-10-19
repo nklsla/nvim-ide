@@ -6,7 +6,7 @@
 rm nvim-linux64.deb
 wget https://github.com/neovim/neovim/releases/download/v0.7.2/nvim-linux64.deb
 sudo killall apt apt-get
-sudo apt-get install ./nvim-linux64.deb
+sudo dpkg -i nvim-linux64.deb
 rm nvim-linux64.deb
 
 # Install supporting packages
