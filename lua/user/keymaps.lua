@@ -58,9 +58,9 @@ keymap("v", "p", '"_dP', opts)
 
 -- Insert --
 -- Press jk/kj fast to enter normal mode
-keymap("i", "jk", "<ESC>", opts)
+-- keymap("i", "jk", "<ESC>", opts)
 keymap("i", "jj", "<ESC>", opts)
-keymap("i", "kj", "<ESC>", opts)
+-- keymap("i", "kj", "<ESC>", opts)
 
 -- Save buffer and stay in insert mode
 keymap("i", "<C-s>", "<ESC>:w<CR>li", { noremap = true })
