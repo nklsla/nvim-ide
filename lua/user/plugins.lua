@@ -91,6 +91,7 @@ return packer.startup(function(use)
 	-- Treesitter
 	use({ "nvim-treesitter/nvim-treesitter", commit = "f3c53d225ada93a99bfd818e1c40012400e2dc55" }) -- Syntax highlighting
 	use({ "p00f/nvim-ts-rainbow", commit = "620a24f6ace51d1407d186e9e94253d463d0bc3e" }) -- Coloring for nested scopes ([{}])
+	use({ "nvim-treesitter/nvim-treesitter-context", commit = "0dd5eae6dbf226107da2c2041ffbb695d9e267c1" }) -- Sticky header for functions/statements
 
 	-- Git
 	use({ "lewis6991/gitsigns.nvim", commit = "c18e016864c92ecf9775abea1baaa161c28082c3" }) -- Tracking git repo and give some useful git commands directly from nvim
