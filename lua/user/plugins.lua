@@ -46,7 +46,6 @@ return packer.startup(function(use)
 	use({ "nvim-lua/plenary.nvim", commit = "968a4b9afec0c633bc369662e78f8c5db0eba249" }) -- Useful lua functions used by lots of plugins
 	use({ "windwp/nvim-autopairs", commit = "fa6876f832ea1b71801c4e481d8feca9a36215ec" }) -- Autopairs, integrates with both cmp and treesitter
 	use({ "numToStr/Comment.nvim", commit = "80e7746e42fa685077a7941e9022308c7ad6adf8" }) -- Comment lines, "gcc"
-	-- use { "JoosepAlviste/nvim-ts-context-commentstring", commit = "88343753dbe81c227a1c1fd2c8d764afb8d36269" }
 	use({ "kyazdani42/nvim-web-devicons", commit = "8d2c5337f0a2d0a17de8e751876eeb192b32310e" }) -- Icons for nvim tree
 	use({ "kyazdani42/nvim-tree.lua", commit = "bdb6d4a25410da35bbf7ce0dbdaa8d60432bc243" }) -- Folder tree
 	use({ "akinsho/bufferline.nvim", commit = "c78b3ecf9539a719828bca82fc7ddb9b3ba0c353" })
@@ -57,10 +56,11 @@ return packer.startup(function(use)
 	use({ "lukas-reineke/indent-blankline.nvim", commit = "6177a59552e35dfb69e1493fd68194e673dc3ee2" })
 	use({ "kylechui/nvim-surround", commit = "d91787d5a716623be7cec3be23c06c0856dc21b8" })
 	use({ "goolord/alpha-nvim", commit = "ef27a59e5b4d7b1c2fe1950da3fe5b1c5f3b4c94" }) -- Start up menu
+	use({ "simrat39/rust-tools.nvim", commit = "99fd1238c6068d0637df30b6cee9a264334015e9" }) --Rust tools
 
 	-- Terminals and cod running
 	use({ "akinsho/toggleterm.nvim", commit = "aaeed9e02167c5e8f00f25156895a6fd95403af8" }) -- Toggle terminals within nvim
-	use({ "CRAG666/code_runner.nvim", commit = "a9afd50a6aa1759d83729fe2db5817f3224b39c5" }) -- Code runner
+	use({ "CRAG666/code_runner.nvim", commit = "cbdd429972d0b55161fb9bab09862e730a4a72ac" }) -- Code runner
 
 	-- Colorschemes
 	use({ "folke/tokyonight.nvim", commit = "8223c970677e4d88c9b6b6d81bda23daf11062bb" })

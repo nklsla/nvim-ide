@@ -209,6 +209,11 @@ _G.packer_plugins = {
     path = "/home/niklas/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-treesitter-context"] = {
+    loaded = true,
+    path = "/home/niklas/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter-context"
+  },
   ["nvim-ts-rainbow"] = {
     loaded = true,
     path = "/home/niklas/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow",
@@ -233,6 +238,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/niklas/.local/share/nvim/site/pack/packer/start/project.nvim",
     url = "https://github.com/ahmedkhalf/project.nvim"
+  },
+  ["rust-tools.nvim"] = {
+    loaded = true,
+    path = "/home/niklas/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
+    url = "https://github.com/simrat39/rust-tools.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,

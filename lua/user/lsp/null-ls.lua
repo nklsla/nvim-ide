@@ -14,12 +14,13 @@ local diagnostics = null_ls.builtins.diagnostics
 
 -- https://github.com/prettier-solidity/prettier-plugin-solidity
 null_ls.setup({
-	debug = false,
+	debug = true,
 	sources = {
 		-- Formatters
 		formatting.black.with({ extra_args = { "--fast" } }),
 		formatting.stylua,
 		formatting.clang_format,
+		-- formatting.rustfmt,
 		-- formatting.astyle,
 
 		-- Diagnostics

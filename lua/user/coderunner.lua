@@ -21,7 +21,8 @@ coderun.setup({
 		java = "cd $dir && javac $fileName && java $fileNameWithoutExt",
 		python = "python3 -u",
 		typescript = "deno run",
-		rust = "cd $dir && rustc $fileName && $dir/$fileNameWithoutExt",
+		-- rust = "cd $dir && rustc $fileName && $dir/$fileNameWithoutExt",
+		rust = "cd $dir && cargo run",
 		cpp = "cd $dir && g++ -o $fileNameWithoutExt $fileName && $dir/$fileNameWithoutExt",
 	},
 	float = {
