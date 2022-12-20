@@ -53,14 +53,11 @@ keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 -- Save buffer
 keymap("n", "<C-s>", ":w<CR>", { noremap = true })
 
--- Better paste
-keymap("v", "p", '"_dP', opts)
-
 -- Insert --
 -- Press jk/kj fast to enter normal mode
--- keymap("i", "jk", "<ESC>", opts)
 keymap("i", "jj", "<ESC>", opts)
 -- keymap("i", "kj", "<ESC>", opts)
+-- keymap("i", "jk", "<ESC>", opts)
 
 -- Save buffer and stay in insert mode
 keymap("i", "<C-s>", "<ESC>:w<CR>li", { noremap = true })
@@ -76,6 +73,9 @@ keymap("i", "<S-TAB>", "<C-d>")
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
+
+-- Better paste
+keymap("v", "p", '"_dP', opts)
 
 -- Plugins --
 
