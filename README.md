@@ -7,7 +7,7 @@ My setup for Neovim as a IDE
 [neovim repo](https://github.com/neovim/neovim)
 
 Download package or install from build.
-The current stable version is 0.7.2
+The current stable version is 0.8.1
 
 # Get healthy
 
