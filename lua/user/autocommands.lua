@@ -51,3 +51,16 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 		vim.lsp.buf.format()
 	end,
 })
+
+-- Toggle relative number on outside insert mode
+vim.api.nvim_create_autocmd({ "BufEnter", "FocusGained", "InsertLeave", "WinEnter" }, {
+	callback = function()
+		vim.opt.relativenumber = true
+	end,
+})
+-- Toggle relative number off inside insert mode
+vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost", "InsertEnter", "WinLeave" }, {
+	callback = function()
+		vim.opt.relativenumber = false
+	end,
+})

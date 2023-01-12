@@ -54,10 +54,10 @@ keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 keymap("n", "<C-s>", ":w<CR>", { noremap = true })
 
 -- Insert --
--- Press jk/kj fast to enter normal mode
-keymap("i", "jj", "<ESC>", opts)
--- keymap("i", "kj", "<ESC>", opts)
--- keymap("i", "jk", "<ESC>", opts)
+-- Press fast to enter normal mode
+keymap("i", "jj", "<ESC>l", opts)
+keymap("i", "kk", "<ESC>", opts)
+keymap("i", "hh", "<ESC>", opts)
 
 -- Save buffer and stay in insert mode
 keymap("i", "<C-s>", "<ESC>:w<CR>li", { noremap = true })
@@ -70,6 +70,10 @@ keymap("i", "<C-Del>", "<cmd>norm! dw<CR>")
 keymap("i", "<S-TAB>", "<C-d>")
 
 -- Visul --
+-- Navigate buffers
+keymap("v", "J", "3j", opts)
+keymap("v", "K", "3k", opts)
+
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
@@ -89,6 +93,7 @@ keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 
 -- Comment
+keymap("v", "<C-_>", "gc", { remap = true })
 -- see user.comment
 
 -- LSP

@@ -51,12 +51,12 @@ return packer.startup(function(use)
 	use({ "kyazdani42/nvim-tree.lua", lock = true }) -- Folder tree
 	use({ "akinsho/bufferline.nvim", lock = true }) -- highlighting
 	use({ "moll/vim-bbye", lock = true })
-	use({ "nvim-lualine/lualine.nvim", lock = true })
+	use({ "nvim-lualine/lualine.nvim", lock = true }) -- Bottom status line
 	use({ "ahmedkhalf/project.nvim", lock = true })
 	use({ "lewis6991/impatient.nvim", lock = true })
 	use({ "lukas-reineke/indent-blankline.nvim", lock = true })
-	use({ "kylechui/nvim-surround", lock = true })
-	use({ "goolord/alpha-nvim", lock = true }) -- Start up menu
+	use({ "kylechui/nvim-surround", lock = true }) -- Tool for surrounds like ()[]{}<>
+	use({ "goolord/alpha-nvim", lock = true }) -- Start-up menu
 	use({ "simrat39/rust-tools.nvim", lock = true }) --Rust tools
 
 	-- Terminals and cod running
