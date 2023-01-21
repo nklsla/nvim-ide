@@ -55,6 +55,13 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 -- Toggle relative number on outside insert mode
 vim.api.nvim_create_autocmd({ "BufEnter", "FocusGained", "InsertLeave", "WinEnter" }, {
 	callback = function()
+		for _, val in ipairs({ "nvimtree", "alpha", "toggleterm" }) do
+			-- Print current filetype for debugging
+			-- print(vim.bo.filetype)
+			if vim.bo.filetype:lower() == val then
+				return
+			end
+		end
 		vim.opt.relativenumber = true
 	end,
 })

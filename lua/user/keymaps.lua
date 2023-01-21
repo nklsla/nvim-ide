@@ -53,11 +53,17 @@ keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 -- Save buffer
 keymap("n", "<C-s>", ":w<CR>", { noremap = true })
 
+--  Unmap F1
+keymap("n", "<F1>", "<ESC>", opts)
+
 -- Insert --
 -- Press fast to enter normal mode
 keymap("i", "jj", "<ESC>l", opts)
 keymap("i", "kk", "<ESC>", opts)
 keymap("i", "hh", "<ESC>", opts)
+
+--  Unmap F1
+keymap("i", "<F1>", "<ESC>l", opts)
 
 -- Save buffer and stay in insert mode
 keymap("i", "<C-s>", "<ESC>:w<CR>li", { noremap = true })
