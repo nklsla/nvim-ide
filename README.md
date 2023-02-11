@@ -91,6 +91,7 @@ See all setting options by looking at `:LspInstallInfo` or at [nvim-lsp-installe
 Install formatters and linters binaries and add them to `~/.config/nvim/lua/user/lsp/null-ls.lua` accrdingly.
 Information about different formatters and linters are found at [nvim-null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim)
 
+For `.toml`files, install taplo using `cargo install taplo-cli --locked` and then install in nvim using LSP server list (`<leader>lI`)
 
 ### Debugger
 DAP - the client that implement/adapt the debugger server.
