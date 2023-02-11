@@ -99,8 +99,8 @@ keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 
 -- Comment
-keymap("v", "<C-_>", "gc", { remap = true })
--- see user.comment
+keymap("v", "<C-_>", "gc", { remap = true, silent = false })
+-- for more see: user.comment
 
 -- LSP
 -- see user.lsp.handlers

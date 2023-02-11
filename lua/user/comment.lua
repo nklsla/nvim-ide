@@ -4,7 +4,7 @@ if not status_ok then
 	return
 end
 
--- :h comment.config
+-- see :h comment.config
 -- for help
 
 comment.setup({
