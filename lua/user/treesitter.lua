@@ -25,8 +25,8 @@ configs.setup({
 	},
 })
 
-local status_ok, context = pcall(require, "treesitter-context")
-if not status_ok then
+local status_ok_context, context = pcall(require, "treesitter-context")
+if not status_ok_context then
 	print(context)
 	return
 end

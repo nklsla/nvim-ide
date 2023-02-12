@@ -44,7 +44,7 @@ coderun.setup({
 	},
 	filetype_path = vim.fn.stdpath("data")
 		.. "/site/pack/packer/start/code_runner.nvim/lua/code_runner/code_runner.json",
-	project_path = vim.fn.stdpath("data")
-		.. "/site/pack/packer/start/code_runner.nvim/lua/code_runner/project_manager.json",
-	project = {},
+	-- project_path = vim.fn.stdpath("data")
+	-- 	.. "/site/pack/packer/start/code_runner.nvim/lua/code_runner/project_manager.json",
+	-- project = {},
 })
