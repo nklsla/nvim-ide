@@ -47,8 +47,9 @@ keymap("n", "K", "3k", opts)
 keymap("n", "<ESC>", "<cmd>nohlsearch<CR>", opts)
 
 -- Close buffers
-keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
--- keymap("n", "<S-q>", ":q<CR>", opts)
+-- keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
+keymap("n", "<S-q>", ":bd<CR>", opts)
+keymap("n", "<S-Q>", ":bd!<CR>", opts)
 
 -- Save buffer
 keymap("n", "<C-s>", ":w<CR>", { noremap = true })
