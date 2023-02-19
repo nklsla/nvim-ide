@@ -10,8 +10,26 @@ if not config_status_ok then
 	return
 end
 
-local tree_cb = nvim_tree_config.nvim_tree_callback
+-- Open nvim-tree when openling folders
+-- Example command: "nvim ."
+local function open_nvim_tree(data)
+	-- buffer is a directory
+	local directory = vim.fn.isdirectory(data.file) == 1
 
+	if not directory then
+		return
+	end
+
+	-- change to the directory
+	vim.cmd.cd(data.file)
+
+	-- open the tree
+	require("nvim-tree.api").tree.open()
+end
+
+vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
+
+local tree_cb = nvim_tree_config.nvim_tree_callback
 nvim_tree.setup({
 	update_focused_file = {
 		enable = true,

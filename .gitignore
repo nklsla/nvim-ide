@@ -1,6 +1,6 @@
 # Project specific
 gittoken.txt
-./plugin/packer_compiled.lua
+plugin/
 
 # Compiled Lua sources
 luac.out
