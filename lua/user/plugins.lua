@@ -51,7 +51,7 @@ local pinned = {
 	["windwp/nvim-autopairs"] = "45ae3122a4c7744db41298b41f9f5a3f092123e6",
 	["numToStr/Comment.nvim"] = "418d3117dab2f54c4340ea73e0070dd78fc81753",
 	["nvim-tree/nvim-web-devicons"] = "bd7a222287c5828cd0607cd0a5605e52f0460074",
-	["nvim-tree/nvim-tree.lua"] = "4222bb875d86a2a53069c75c4833e27f58e26d90",
+	["nvim-tree/nvim-tree.lua"] = "9c97e6449b0b0269bd44e1fd4857184dfa57bb4c",
 	["akinsho/bufferline.nvim"] = "84b0822b2af478d0b4f7b0f9249ca218855331db",
 	-- ["moll/vim-bbye"] = "25ef93ac5a87526111f43e5110675032dbcacf56",
 	["nvim-lualine/lualine.nvim"] = "e99d733e0213ceb8f548ae6551b04ae32e590c80",
@@ -93,8 +93,8 @@ local pinned = {
 	["nvim-telescope/telescope.nvim"] = "203bf5609137600d73e8ed82703d6b0e320a5f36",
 
 	-- Treesitter
-	["nvim-treesitter/nvim-treesitter"] = "be26661417ae44ee11253e60afe86c51844a34ce",
-	["p00f/nvim-ts-rainbow"] = "ef95c15a935f97c65a80e48e12fe72d49aacf9b9",
+	["nvim-treesitter/nvim-treesitter"] = "ad8798795c71a00e796e1919c905a6bf815e9359",
+	-- ["p00f/nvim-ts-rainbow"] = "ef95c15a935f97c65a80e48e12fe72d49aacf9b9",
 	["nvim-treesitter/nvim-treesitter-context"] = "895ec44f5c89bc67ba5440aef3d1f2efa3d59a41",
 
 	-- Git
@@ -104,6 +104,9 @@ local pinned = {
 	["mfussenegger/nvim-dap"] = "049eebe3a1609547a5d2db5ba99585212836adf5",
 	["rcarriga/nvim-dap-ui"] = "ffe3e589fe2861b5ed0486832b0974e94587ae23",
 	["theHamsta/nvim-dap-virtual-text"] = "8db23ea51203b5f00ad107a0cef7e0b2d7a0476c",
+
+	-- Markdown preview
+	["iamcco/markdown-preview.nvim"] = "02cc3874738bc0f86e4b91f09b8a0ac88aef8e96",
 }
 
 -- Install your plugins here
@@ -181,6 +184,25 @@ return packer.startup(function(use)
 	use({ "mfussenegger/nvim-dap", commit = pinned["mfussenegger/nvim-dap"], lock = global_lock }) -- Debug adapt protocol client
 	use({ "rcarriga/nvim-dap-ui", commit = pinned["rcarriga/nvim-dap-ui"], lock = global_lock }) -- Debug user interface
 	use({ "theHamsta/nvim-dap-virtual-text", commit = pinned["theHamsta/nvim-dap-virtual-text"], lock = global_lock }) -- Adds text for variables during debugging
+
+	-- Markdown preview
+	use({
+		"iamcco/markdown-preview.nvim",
+		commit = pinned["iamcco/markdown-preview.nvim"],
+		run = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	})
+
+	use({
+		"iamcco/markdown-preview.nvim",
+		commit = pinned["iamcco/markdown-preview.nvim"],
+		run = "cd app && npm install",
+		setup = function()
+			vim.g.mkdp_filetypes = { "markdown" }
+		end,
+		ft = { "markdown" },
+	})
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

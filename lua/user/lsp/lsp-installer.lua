@@ -6,14 +6,14 @@ end
 -- Add installed servers here
 local servers = {
 	-- "sumneko_lua",
-    "lua_ls",
+	"lua_ls",
 	-- "cssls",
 	-- "html",
 	-- "tsserver",
 	"pyright",
 	-- "bashls",
 	-- "jsonls",
-	-- "yamlls",
+	"yamlls",
 	"clangd",
 	-- "rust_analyzer",
 }
