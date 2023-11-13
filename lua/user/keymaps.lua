@@ -76,6 +76,10 @@ keymap("i", "<C-Del>", "<cmd>norm! dw<CR>")
 -- Map shift-tab to behave normally
 keymap("i", "<S-TAB>", "<C-d>")
 
+-- Copilot
+vim.set = { g = { copilot_no_tab_map = true } }
+keymap("i", "<end>", 'copilot#Accept("<CR>")', { noremap = true, expr = true, silent = true, replace_keycodes = false })
+
 -- Visul --
 -- Navigate buffers
 keymap("v", "J", "3j", opts)
