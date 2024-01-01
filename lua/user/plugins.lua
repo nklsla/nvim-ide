@@ -44,7 +44,7 @@ packer.init({
 -- Set global_lock = false
 -- comment out pinned (usage will result in "nil" which allows for latest commit)
 -- To update single plugin, do the same but for the specific plugin
-local global_lock = true
+local global_lock = false
 local pinned = {
 	["wbthomason/packer.nvim"] = "1d0cf98a561f7fd654c970c49f917d74fafe1530",
 	["nvim-lua/plenary.nvim"] = "9a0d3bf7b832818c042aaf30f692b081ddd58bd9",
@@ -108,101 +108,96 @@ local pinned = {
 	-- Markdown preview
 	["iamcco/markdown-preview.nvim"] = "02cc3874738bc0f86e4b91f09b8a0ac88aef8e96",
 }
-
+local snapshot = "20240101"
 -- Install your plugins here
 return packer.startup(function(use)
 	-- My plugins here
-	use({ "wbthomason/packer.nvim", commit = pinned["wbthomason/packer.nvim"], lock = global_lock }) -- Have packer manage itself
-	use({ "nvim-lua/plenary.nvim", commit = pinned["nvim-lua/plenary.nvim"], lock = global_lock }) -- Useful lua functions used by lots of plugins
-	use({ "windwp/nvim-autopairs", commit = pinned["windwp/nvim-autopairs"], lock = global_lock }) -- Autopairs, integrates with both cmp and treesitter
-	use({ "numToStr/Comment.nvim", commit = pinned["numToStr/Comment.nvim"], lock = global_lock }) -- Comment lines, "gcc"
-	use({ "nvim-tree/nvim-web-devicons", commit = pinned["nvim-tree/nvim-web-devicons"], lock = global_lock }) -- Icons for nvim tree
-	-- use({ "kyazdani42/nvim-web-devicons",commit=pinned[ "kyazdani42/nvim-web-devicons" ,lock = false }) -- Icons for nvim tree
-	use({ "nvim-tree/nvim-tree.lua", commit = pinned["nvim-tree/nvim-tree.lua"], lock = global_lock }) -- Folder tree
-	-- use({ "kyazdani42/nvim-tree.lua",commit=pinned[ "kyazdani42/nvim-tree.lua" ,lock = global_lock }) -- Folder tree
-	use({ "akinsho/bufferline.nvim", commit = pinned["akinsho/bufferline.nvim"], lock = global_lock }) -- highlighting
-	-- use({ "moll/vim-bbye",commit=pinned[ "moll/vim-bbye" ,lock = global_lock }) -- REMOVE?
-	use({ "nvim-lualine/lualine.nvim", commit = pinned["nvim-lualine/lualine.nvim"], lock = global_lock }) -- Bottom status line
-	use({ "ahmedkhalf/project.nvim", commit = pinned["ahmedkhalf/project.nvim"], lock = global_lock })
-	use({ "lewis6991/impatient.nvim", commit = pinned["lewis6991/impatient.nvim"], lock = global_lock })
-	use({
-		"lukas-reineke/indent-blankline.nvim",
-		commit = pinned["lukas-reineke/indent-blankline.nvim"],
-		lock = global_lock,
-	})
-	use({ "kylechui/nvim-surround", commit = pinned["kylechui/nvim-surround"], lock = global_lock }) -- Tool for surrounds like ()[]{}<>
-	use({ "goolord/alpha-nvim", commit = pinned["goolord/alpha-nvim"], lock = global_lock }) -- Start-up menu
-	use({ "simrat39/rust-tools.nvim", commit = pinned["simrat39/rust-tools.nvim"], lock = global_lock }) --Rust tools
+	use({ "wbthomason/packer.nvim", config = { snapshot = snapshot } }) -- Have packer manage itself
+	use({ "nvim-lua/plenary.nvim", config = { snapshot = snapshot } }) -- Useful lua functions used by lots of plugins
+	use({ "windwp/nvim-autopairs", config = { snapshot = snapshot } }) -- Autopairs, integrates with both cmp and treesitter
+	use({ "numToStr/Comment.nvim", config = { snapshot = snapshot } }) -- Comment lines, "gcc"
+	use({ "nvim-tree/nvim-web-devicons", config = { snapshot = snapshot } }) -- Icons for nvim tree
+	use({ "nvim-tree/nvim-tree.lua", config = { snapshot = snapshot } }) -- Folder tree
+	use({ "akinsho/bufferline.nvim", config = { snapshot = snapshot } }) -- highlighting
+	use({ "nvim-lualine/lualine.nvim", config = { snapshot = snapshot } }) -- Bottom status line
+	use({ "ahmedkhalf/project.nvim", config = { snapshot = snapshot } })
+	use({ "lewis6991/impatient.nvim", config = { snapshot = snapshot } })
+	use({ "lukas-reineke/indent-blankline.nvim", config = { snapshot = snapshot } })
+	use({ "kylechui/nvim-surround", config = { snapshot = snapshot } }) -- Tool for surrounds like ()[]{}<>
+	use({ "goolord/alpha-nvim", config = { snapshot = snapshot } }) -- Start-up menu
+	use({ "simrat39/rust-tools.nvim", config = { snapshot = snapshot } }) --Rust tools
 
 	-- Terminals and cod running
-	use({ "akinsho/toggleterm.nvim", commit = pinned["akinsho/toggleterm.nvim"], lock = global_lock }) -- Toggle terminals within nvim
-	use({ "CRAG666/code_runner.nvim", commit = pinned["CRAG666/code_runner.nvim"], lock = global_lock }) -- Code runner
+	use({ "akinsho/toggleterm.nvim", config = { snapshot = snapshot } }) -- Toggle terminals within nvim
+	use({ "CRAG666/code_runner.nvim", config = { snapshot = snapshot } }) -- Code runner
 
 	-- Colorschemes
-	use({ "folke/tokyonight.nvim", commit = pinned["folke/tokyonight.nvim"], lock = global_lock })
-	use({ "lunarvim/darkplus.nvim", commit = pinned["lunarvim/darkplus.nvim"], lock = global_lock })
+	use({ "folke/tokyonight.nvim", config = { snapshot = snapshot } })
+	use({ "lunarvim/darkplus.nvim", config = { snapshot = snapshot } })
 
 	-- cmp plugins
-	use({ "hrsh7th/nvim-cmp", commit = pinned["hrsh7th/nvim-cmp"], lock = global_lock }) -- The completion plugin
-	use({ "hrsh7th/cmp-buffer", commit = pinned["hrsh7th/cmp-buffer"], lock = global_lock }) -- buffer completions
-	use({ "hrsh7th/cmp-path", commit = pinned["hrsh7th/cmp-path"], lock = global_lock }) -- path completions
-	use({ "saadparwaiz1/cmp_luasnip", commit = pinned["saadparwaiz1/cmp_luasnip"], lock = global_lock }) -- snippet completions
-	use({ "hrsh7th/cmp-nvim-lsp", commit = pinned["hrsh7th/cmp-nvim-lsp"], lock = global_lock })
-	use({ "hrsh7th/cmp-nvim-lua", commit = pinned["hrsh7th/cmp-nvim-lua"], lock = global_lock })
+	use({ "hrsh7th/nvim-cmp", config = { snapshot = snapshot } }) -- The completion plugin
+	use({ "hrsh7th/cmp-buffer", config = { snapshot = snapshot } }) -- buffer completions
+	use({ "hrsh7th/cmp-path", config = { snapshot = snapshot } }) -- path completions
+	use({ "saadparwaiz1/cmp_luasnip", config = { snapshot = snapshot } }) -- snippet completions
+	use({ "hrsh7th/cmp-nvim-lsp", config = { snapshot = snapshot } })
+	use({ "hrsh7th/cmp-nvim-lua", config = { snapshot = snapshot } })
 	use({
 		"hrsh7th/cmp-nvim-lsp-signature-help",
-		commit = pinned["hrsh7th/cmp-nvim-lsp-signature-help"],
-		lock = global_lock,
+		config = { snapshot = snapshot },
 	}) -- Show current parameter while autocompleting
 
 	-- snippets
-	use({ "L3MON4D3/LuaSnip", commit = pinned["L3MON4D3/LuaSnip"], lock = global_lock }) --snippet engine
-	use({ "rafamadriz/friendly-snippets", commit = pinned["rafamadriz/friendly-snippets"], lock = global_lock }) -- a bunch of snippets to use
+	use({ "L3MON4D3/LuaSnip", config = { snapshot = snapshot } }) --snippet engine
+	use({ "rafamadriz/friendly-snippets", config = { snapshot = snapshot } }) -- a bunch of snippets to use
 
 	-- LSP
-	use({ "neovim/nvim-lspconfig", commit = pinned["neovim/nvim-lspconfig"], lock = global_lock }) -- enable LSP
-	use({ "williamboman/nvim-lsp-installer", commit = pinned["williamboman/nvim-lsp-installer"], lock = global_lock }) -- simple to use language server installer
-	use({ "jose-elias-alvarez/null-ls.nvim", commit = pinned["jose-elias-alvarez/null-ls.nvim"], lock = global_lock }) -- for formatters and linters
-	use({ "RRethy/vim-illuminate", commit = pinned["RRethy/vim-illuminate"], lock = global_lock })
+	use({ "neovim/nvim-lspconfig", config = { snapshot = snapshot } }) -- enable LSP
+	use({ "williamboman/nvim-lsp-installer", config = { snapshot = snapshot } }) -- simple to use language server installer
+	use({ "jose-elias-alvarez/null-ls.nvim", config = { snapshot = snapshot } }) -- for formatters and linters
+	use({ "RRethy/vim-illuminate", config = { snapshot = snapshot } })
 
 	-- Telescope
-	use({ "nvim-telescope/telescope.nvim", commit = pinned["nvim-telescope/telescope.nvim"], lock = global_lock }) -- Fuzzy finder
+	use({ "nvim-telescope/telescope.nvim", config = { snapshot = snapshot } }) -- Fuzzy finder
 
 	-- Treesitter
-	use({ "nvim-treesitter/nvim-treesitter", commit = pinned["nvim-treesitter/nvim-treesitter"], lock = global_lock }) -- Syntax highlighting
-	use({ "p00f/nvim-ts-rainbow", commit = pinned["p00f/nvim-ts-rainbow"], lock = global_lock }) -- Coloring for nested scopes ([{}])
+	use({ "nvim-treesitter/nvim-treesitter", config = { snapshot = snapshot } }) -- Syntax highlighting
+	use({ "p00f/nvim-ts-rainbow", config = { snapshot = snapshot } }) -- Coloring for nested scopes ([{}])
 	use({
 		"nvim-treesitter/nvim-treesitter-context",
-		commit = pinned["nvim-treesitter/nvim-treesitter-context"],
-		lock = global_lock,
+		config = { snapshot = snapshot },
 	}) -- Sticky header for functions/statements
 
 	-- Git
-	use({ "lewis6991/gitsigns.nvim", commit = pinned["lewis6991/gitsigns.nvim"], lock = global_lock }) -- Tracking git repo and give some useful git commands directly from nvim
+	use({ "lewis6991/gitsigns.nvim", config = { snapshot = snapshot } }) -- Tracking git repo and give some useful git commands directly from nvim
 
 	-- DAP
-	use({ "mfussenegger/nvim-dap", commit = pinned["mfussenegger/nvim-dap"], lock = global_lock }) -- Debug adapt protocol client
-	use({ "rcarriga/nvim-dap-ui", commit = pinned["rcarriga/nvim-dap-ui"], lock = global_lock }) -- Debug user interface
-	use({ "theHamsta/nvim-dap-virtual-text", commit = pinned["theHamsta/nvim-dap-virtual-text"], lock = global_lock }) -- Adds text for variables during debugging
+	use({ "mfussenegger/nvim-dap", config = { snapshot = snapshot } }) -- Debug adapt protocol client
+	use({ "rcarriga/nvim-dap-ui", config = { snapshot = snapshot } }) -- Debug user interface
+	use({ "theHamsta/nvim-dap-virtual-text", config = { snapshot = snapshot } }) -- Adds text for variables during debugging
 
 	-- Markdown preview
 	use({
 		"iamcco/markdown-preview.nvim",
-		commit = pinned["iamcco/markdown-preview.nvim"],
+		config = { snapshot = snapshot },
 		run = function()
 			vim.fn["mkdp#util#install"]()
 		end,
-	})
-
-	use({
-		"iamcco/markdown-preview.nvim",
-		commit = pinned["iamcco/markdown-preview.nvim"],
-		run = "cd app && npm install",
 		setup = function()
 			vim.g.mkdp_filetypes = { "markdown" }
 		end,
 		ft = { "markdown" },
 	})
+
+	-- - use({
+	-- 	"iamcco/markdown-preview.nvim",
+	-- 	commit = pinned["iamcco/markdown-preview.nvim"],
+	-- 	run = "cd app && npm install",
+	-- 	setup = function()
+	-- 		vim.g.mkdp_filetypes = { "markdown" }
+	-- 	end,
+	-- 	ft = { "markdown" },
+	-- })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
@@ -210,3 +205,109 @@ return packer.startup(function(use)
 		require("packer").sync()
 	end
 end)
+
+-- -- Install your plugins here
+-- return packer.startup(function(use)
+-- 	-- My plugins here
+-- 	use({ "wbthomason/packer.nvim", commit = pinned["wbthomason/packer.nvim"], lock = global_lock }) -- Have packer manage itself
+-- 	use({ "nvim-lua/plenary.nvim", commit = pinned["nvim-lua/plenary.nvim"], lock = global_lock }) -- Useful lua functions used by lots of plugins
+-- 	use({ "windwp/nvim-autopairs", commit = pinned["windwp/nvim-autopairs"], lock = global_lock }) -- Autopairs, integrates with both cmp and treesitter
+-- 	use({ "numToStr/Comment.nvim", commit = pinned["numToStr/Comment.nvim"], lock = global_lock }) -- Comment lines, "gcc"
+-- 	use({ "nvim-tree/nvim-web-devicons", commit = pinned["nvim-tree/nvim-web-devicons"], lock = global_lock }) -- Icons for nvim tree
+-- 	-- use({ "kyazdani42/nvim-web-devicons",commit=pinned[ "kyazdani42/nvim-web-devicons" ,lock = false }) -- Icons for nvim tree
+-- 	use({ "nvim-tree/nvim-tree.lua", commit = pinned["nvim-tree/nvim-tree.lua"], lock = global_lock }) -- Folder tree
+-- 	-- use({ "kyazdani42/nvim-tree.lua",commit=pinned[ "kyazdani42/nvim-tree.lua" ,lock = global_lock }) -- Folder tree
+-- 	use({ "akinsho/bufferline.nvim", commit = pinned["akinsho/bufferline.nvim"], lock = global_lock }) -- highlighting
+-- 	-- use({ "moll/vim-bbye",commit=pinned[ "moll/vim-bbye" ,lock = global_lock }) -- REMOVE?
+-- 	use({ "nvim-lualine/lualine.nvim", commit = pinned["nvim-lualine/lualine.nvim"], lock = global_lock }) -- Bottom status line
+-- 	use({ "ahmedkhalf/project.nvim", commit = pinned["ahmedkhalf/project.nvim"], lock = global_lock })
+-- 	use({ "lewis6991/impatient.nvim", commit = pinned["lewis6991/impatient.nvim"], lock = global_lock })
+-- 	use({
+-- 		"lukas-reineke/indent-blankline.nvim",
+-- 		commit = pinned["lukas-reineke/indent-blankline.nvim"],
+-- 		lock = global_lock,
+-- 	})
+-- 	use({ "kylechui/nvim-surround", commit = pinned["kylechui/nvim-surround"], lock = global_lock }) -- Tool for surrounds like ()[]{}<>
+-- 	use({ "goolord/alpha-nvim", commit = pinned["goolord/alpha-nvim"], lock = global_lock }) -- Start-up menu
+-- 	use({ "simrat39/rust-tools.nvim", commit = pinned["simrat39/rust-tools.nvim"], lock = global_lock }) --Rust tools
+--
+-- 	-- Terminals and cod running
+-- 	use({ "akinsho/toggleterm.nvim", commit = pinned["akinsho/toggleterm.nvim"], lock = global_lock }) -- Toggle terminals within nvim
+-- 	use({ "CRAG666/code_runner.nvim", commit = pinned["CRAG666/code_runner.nvim"], lock = global_lock }) -- Code runner
+--
+-- 	-- Colorschemes
+-- 	use({ "folke/tokyonight.nvim", commit = pinned["folke/tokyonight.nvim"], lock = global_lock })
+-- 	use({ "lunarvim/darkplus.nvim", commit = pinned["lunarvim/darkplus.nvim"], lock = global_lock })
+--
+-- 	-- cmp plugins
+-- 	use({ "hrsh7th/nvim-cmp", commit = pinned["hrsh7th/nvim-cmp"], lock = global_lock }) -- The completion plugin
+-- 	use({ "hrsh7th/cmp-buffer", commit = pinned["hrsh7th/cmp-buffer"], lock = global_lock }) -- buffer completions
+-- 	use({ "hrsh7th/cmp-path", commit = pinned["hrsh7th/cmp-path"], lock = global_lock }) -- path completions
+-- 	use({ "saadparwaiz1/cmp_luasnip", commit = pinned["saadparwaiz1/cmp_luasnip"], lock = global_lock }) -- snippet completions
+-- 	use({ "hrsh7th/cmp-nvim-lsp", commit = pinned["hrsh7th/cmp-nvim-lsp"], lock = global_lock })
+-- 	use({ "hrsh7th/cmp-nvim-lua", commit = pinned["hrsh7th/cmp-nvim-lua"], lock = global_lock })
+-- 	use({
+-- 		"hrsh7th/cmp-nvim-lsp-signature-help",
+-- 		commit = pinned["hrsh7th/cmp-nvim-lsp-signature-help"],
+-- 		lock = global_lock,
+-- 	}) -- Show current parameter while autocompleting
+--
+-- 	-- snippets
+-- 	use({ "L3MON4D3/LuaSnip", commit = pinned["L3MON4D3/LuaSnip"], lock = global_lock }) --snippet engine
+-- 	use({ "rafamadriz/friendly-snippets", commit = pinned["rafamadriz/friendly-snippets"], lock = global_lock }) -- a bunch of snippets to use
+--
+-- 	-- LSP
+-- 	use({ "neovim/nvim-lspconfig", commit = pinned["neovim/nvim-lspconfig"], lock = global_lock }) -- enable LSP
+-- 	use({ "williamboman/nvim-lsp-installer", commit = pinned["williamboman/nvim-lsp-installer"], lock = global_lock }) -- simple to use language server installer
+-- 	use({ "jose-elias-alvarez/null-ls.nvim", commit = pinned["jose-elias-alvarez/null-ls.nvim"], lock = global_lock }) -- for formatters and linters
+-- 	use({ "RRethy/vim-illuminate", commit = pinned["RRethy/vim-illuminate"], lock = global_lock })
+--
+-- 	-- Telescope
+-- 	use({ "nvim-telescope/telescope.nvim", commit = pinned["nvim-telescope/telescope.nvim"], lock = global_lock }) -- Fuzzy finder
+--
+-- 	-- Treesitter
+-- 	use({ "nvim-treesitter/nvim-treesitter", commit = pinned["nvim-treesitter/nvim-treesitter"], lock = global_lock }) -- Syntax highlighting
+-- 	use({ "p00f/nvim-ts-rainbow", commit = pinned["p00f/nvim-ts-rainbow"], lock = global_lock }) -- Coloring for nested scopes ([{}])
+-- 	use({
+-- 		"nvim-treesitter/nvim-treesitter-context",
+-- 		commit = pinned["nvim-treesitter/nvim-treesitter-context"],
+-- 		lock = global_lock,
+-- 	}) -- Sticky header for functions/statements
+--
+-- 	-- Git
+-- 	use({ "lewis6991/gitsigns.nvim", commit = pinned["lewis6991/gitsigns.nvim"], lock = global_lock }) -- Tracking git repo and give some useful git commands directly from nvim
+--
+-- 	-- DAP
+-- 	use({ "mfussenegger/nvim-dap", commit = pinned["mfussenegger/nvim-dap"], lock = global_lock }) -- Debug adapt protocol client
+-- 	use({ "rcarriga/nvim-dap-ui", commit = pinned["rcarriga/nvim-dap-ui"], lock = global_lock }) -- Debug user interface
+-- 	use({ "theHamsta/nvim-dap-virtual-text", commit = pinned["theHamsta/nvim-dap-virtual-text"], lock = global_lock }) -- Adds text for variables during debugging
+--
+-- 	-- Markdown preview
+-- 	use({
+-- 		"iamcco/markdown-preview.nvim",
+-- 		commit = pinned["iamcco/markdown-preview.nvim"],
+-- 		run = function()
+-- 			vim.fn["mkdp#util#install"]()
+-- 		end,
+-- 		setup = function()
+-- 			vim.g.mkdp_filetypes = { "markdown" }
+-- 		end,
+-- 		ft = { "markdown" },
+-- 	})
+--
+-- 	-- - use({
+-- 	-- 	"iamcco/markdown-preview.nvim",
+-- 	-- 	commit = pinned["iamcco/markdown-preview.nvim"],
+-- 	-- 	run = "cd app && npm install",
+-- 	-- 	setup = function()
+-- 	-- 		vim.g.mkdp_filetypes = { "markdown" }
+-- 	-- 	end,
+-- 	-- 	ft = { "markdown" },
+-- 	-- })
+--
+-- 	-- Automatically set up your configuration after cloning packer.nvim
+-- 	-- Put this at the end after all plugins
+-- 	if PACKER_BOOTSTRAP then
+-- 		require("packer").sync()
+-- 	end
+-- end)

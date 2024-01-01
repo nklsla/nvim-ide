@@ -18,31 +18,36 @@ vim.cmd([[highlight IndentBlanklineContextStart guisp=#61AFEF   gui=underline]])
 -- vim.cmd([[highlight IndentBlanklineIndent6 guifg=#00FF00 gui=nocombine]])
 -- let g:indent_blankline_char_blankline = '┆'
 
-indent_blankline.setup({
-	char = "▏",
-	context_char = "┃", --"▏",
-	context_char_list = { "┃", "║", "╬", "█" },
-	char_list = { "▏", "|", "¦", "┆", "┊" },
-	show_trailing_blankline_indent = true,
-	show_first_indent_level = true,
-	use_treesitter = true,
-	show_current_context = true,
-	show_current_context_start = true,
-	buftype_exclude = {
-		"terminal",
-		"nofile",
-	},
-	-- char_highlight_list = {
-	-- 	"IndentBlanklineIndent1",
-	-- 	"IndentBlanklineIndent2",
-	-- 	"IndentBlanklineIndent3",
-	-- 	"IndentBlanklineIndent4",
-	-- 	"IndentBlanklineIndent5",
-	-- 	"IndentBlanklineIndent6",
-	-- },
-	filetype_exclude = {
-		"help",
-		"packer",
-		"NvimTree",
-	},
-})
+-- indent_blankline.setup({
+-- 	indent = {
+-- 		-- char = "▏",
+-- 		-- context_char = "┃", --"▏",
+-- 		-- context_char_list = { "┃", "║", "╬", "█" },
+-- 		-- char_list = { "▏", "|", "¦", "┆", "┊" },
+--
+-- 		char_tab = { "┃", "║", "╬", "█" },
+-- 		char = { "▏", "|", "¦", "┆", "┊" },
+-- 	},
+-- 	show_trailing_blankline_indent = true,
+-- 	show_first_indent_level = true,
+-- 	use_treesitter = true,
+-- 	show_current_context = true,
+-- 	show_current_context_start = true,
+-- 	buftype_exclude = {
+-- 		"terminal",
+-- 		"nofile",
+-- 	},
+-- 	-- char_highlight_list = {
+-- 	-- 	"IndentBlanklineIndent1",
+-- 	-- 	"IndentBlanklineIndent2",
+-- 	-- 	"IndentBlanklineIndent3",
+-- 	-- 	"IndentBlanklineIndent4",
+-- 	-- 	"IndentBlanklineIndent5",
+-- 	-- 	"IndentBlanklineIndent6",
+-- 	-- },
+-- 	filetype_exclude = {
+-- 		"help",
+-- 		"packer",
+-- 		"NvimTree",
+-- 	},
+-- })

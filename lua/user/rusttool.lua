@@ -34,4 +34,9 @@ rt.setup({
 			lsp_keymaps(bufnr)
 		end,
 	},
+	settings = {
+		cargo = {
+			allFeatures = true,
+		},
+	},
 })
