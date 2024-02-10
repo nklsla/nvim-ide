@@ -50,6 +50,7 @@ keymap("n", "<ESC>", "<cmd>nohlsearch<CR>", opts)
 -- keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 -- keymap("n", "<S-q>", ":bd<CR>", opts)
 keymap("n", "<S-Q>", ":bd!<CR>", opts)
+-- keymap("n", "<S-Q>", ":close<CR>", opts)
 
 -- Save buffer
 keymap("n", "<C-s>", ":w<CR>", { noremap = true })
@@ -77,8 +78,8 @@ keymap("i", "<C-Del>", "<cmd>norm! dw<CR>")
 keymap("i", "<S-TAB>", "<C-d>")
 
 -- Copilot
--- vim.set = { g = { copilot_no_tab_map = true } }
--- keymap("i", "<end>", 'copilot#Accept("<CR>")', { noremap = true, expr = true, silent = true, replace_keycodes = false })
+vim.set = { g = { copilot_no_tab_map = true } }
+keymap("i", "<end>", 'copilot#Accept("<CR>")', { noremap = true, expr = true, silent = true, replace_keycodes = false })
 
 -- Visul --
 -- Navigate buffers

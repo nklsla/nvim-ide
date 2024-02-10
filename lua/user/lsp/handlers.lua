@@ -88,9 +88,10 @@ M.on_attach = function(client, bufnr)
 	if client.name == "taplo" then
 		client.server_capabilities.documentFormattingProvider = false
 	end
-	-- if client.name == "rust_analyzer" then
-	--  client.server_capabilities.documentFormattingProvider = false
-	-- end
+
+	if client.name == "rust_analyzer" then
+		client.server_capabilities.documentFormattingProvider = false
+	end
 
 	lsp_keymaps(bufnr)
 	local status_ok, illuminate = pcall(require, "illuminate")

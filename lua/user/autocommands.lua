@@ -71,3 +71,7 @@ vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost", "InsertEnter", "WinLeave"
 		vim.opt.relativenumber = false
 	end,
 })
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "python,rust",
+	command = "setlocal shiftwidth=4 tabstop=4",
+})
