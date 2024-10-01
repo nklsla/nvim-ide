@@ -97,6 +97,8 @@ keymap("v", "p", '"_dP', opts)
 
 -- NvimTree
 keymap("n", "<F2>", ":NvimTreeToggle<CR>", opts)
+-- Netrw
+-- keymap("n", "<F2>", ":20Lexplore<CR>", opts)
 
 -- Telescope
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)

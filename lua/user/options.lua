@@ -45,3 +45,6 @@ set.updatetime = 300 -- faster completion (4000ms default)
 set.whichwrap:append("<,>,[,],h,l") -- allow specified keys to cross line boundaries
 set.wrap = false -- display lines as one long line
 set.writebackup = false -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
+
+-- Netrw
+vim.g.netrw_liststyle = 3
